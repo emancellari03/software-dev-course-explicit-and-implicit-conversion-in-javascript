@@ -1,5 +1,5 @@
+const readline = require('readline-sync'); 
 /*
-
 Part 1: Debugging Challenge
 The JavaScript code below contains intentional bugs related to type conversion.
 Please do the following:
@@ -49,3 +49,7 @@ let missingValue = undefined;
 let convertedValue = Number(missingValue);
 console.log(convertedValue);
 console.log(typeof convertedValue);
+
+
+let name = readline.question("What is your name? ");
+console.log("Hello " + name);
