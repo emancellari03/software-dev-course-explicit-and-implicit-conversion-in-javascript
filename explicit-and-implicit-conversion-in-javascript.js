@@ -19,14 +19,33 @@ Use console.log() to clearly show the before-and-after type conversions.
 */
 
 
-let result = "5" - 2;
+// Fixed with explicit Number conversion so math is clear.
+let firstNumber = Number("5");
+let result = firstNumber - 2;
 console.log("The result is: " + result);
 
-let isValid = Boolean("false");
+// Fixed because Boolean("false") is true.
+// This checks if the text is actually equal to "true".
+let validText = "false";
+let isValid = validText === "true";
 if (isValid) {
-    console.log("This is valid!");
+  console.log("This is valid!");
+} else {
+  console.log("This is not valid!");
 }
 
-let age = "25";
+// Fixed with Number conversion so it adds instead of joining strings.
+let age = Number("25");
 let totalAge = age + 5;
 console.log("Total Age: " + totalAge);
+
+// Implicit conversion example
+let implicitValue = "5" + 2;
+console.log(implicitValue);
+console.log(typeof implicitValue);
+
+// Explicit conversion example with edge case
+let missingValue = undefined;
+let convertedValue = Number(missingValue);
+console.log(convertedValue);
+console.log(typeof convertedValue);
